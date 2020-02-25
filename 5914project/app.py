@@ -8,19 +8,19 @@ app = Flask(__name__)
 authenticator = IAMAuthenticator('JE-aM2ut2o22Ky_2WdQmEgAnMwEgIqBgmh1Eipjw2pm4')
 
 assistant = AssistantV2(
-    version='2019-02-05',
+    version='2020-02-05',
     authenticator=authenticator
 )
 
 # replace url
 
-assistant.set_service_url('https://api.us-south.assistant.watson.cloud.ibm.com/instances/5a21d209-b7ba-4ba1-975e-28b2222467db/v2/assistants/ebaf838c-1efe-4137-8f08-470f2526aa44/sessions')
+assistant.set_service_url('https://api.us-south.assistant.watson.cloud.ibm.com')
 
-assistant_id = 'ebaf838c-1efe-4137-8f08-470f2526aa44'
+assistant_idd = 'ebaf838c-1efe-4137-8f08-470f2526aa44'
 
 # create session.
-session_id = assistant.create_session(
-    assistant_id=assistant_id
+session_idd = assistant.create_session(
+    assistant_id=assistant_idd
 ).get_result()['session_id']
 
 '''
@@ -58,21 +58,17 @@ def predict():
 @app.route('/send_message/<message>')
 def send_message(message):
     response = assistant.message(
-        assistant_id,
-        session_id,
+        assistant_idd,
+        session_idd,
         input={
             'message_type': 'text',
             'text': str(message)
         }
     ).get_result()
-    return response
+    print(json.dumps(response))
+    return json.dumps(response)
 
 
-assistant.delete_session(
-    assistant_id=assistant_id,
-    session_id=session_id
-
-)
 '''
 #methods to send message and get the response
 @app.route('/send_message/<message>')
