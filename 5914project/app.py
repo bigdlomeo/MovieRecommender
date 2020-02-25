@@ -5,18 +5,18 @@ from ibm_cloud_sdk_core.authenticators import IAMAuthenticator, BasicAuthenticat
 
 app = Flask(__name__)
 
-authenticator = BasicAuthenticator('clockworkdelphine@hotmail.com', 'Kurogane970426')
+authenticator = IAMAuthenticator('JE-aM2ut2o22Ky_2WdQmEgAnMwEgIqBgmh1Eipjw2pm4')
 
 assistant = AssistantV2(
-    version='2019-02-28',
+    version='2019-02-05',
     authenticator=authenticator
 )
 
 # replace url
 
-assistant.set_service_url('https://gateway.watsonplatform.net/assistant/api')
+assistant.set_service_url('https://api.us-south.assistant.watson.cloud.ibm.com/instances/5a21d209-b7ba-4ba1-975e-28b2222467db/v2/assistants/ebaf838c-1efe-4137-8f08-470f2526aa44/sessions')
 
-assistant_id = 'ad14b037-49bc-4fdb-9025-3a40584574b7'
+assistant_id = 'ebaf838c-1efe-4137-8f08-470f2526aa44'
 
 # create session.
 session_id = assistant.create_session(
@@ -65,6 +65,7 @@ def send_message(message):
             'text': str(message)
         }
     ).get_result()
+    return response
 
 
 assistant.delete_session(
