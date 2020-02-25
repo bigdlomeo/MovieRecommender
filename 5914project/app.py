@@ -65,7 +65,6 @@ def send_message(message):
             'text': str(message)
         }
     ).get_result()
-    print(json.dumps(response))
     return json.dumps(response)
 
 
