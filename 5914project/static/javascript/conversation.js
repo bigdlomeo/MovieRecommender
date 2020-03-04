@@ -45,6 +45,7 @@ function getReply(message){
 $('.submit').click(function () {
     sendMessage();
     getReply();
+    return false;
 });
 
 
