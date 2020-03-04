@@ -1,5 +1,14 @@
 
 
+function begin(){
+    $.ajax({
+        url: "/send_message/begin",
+        }).done(function(e) {
+            getReply(e);
+        });
+    return false;
+}
+
 
 function sendMessage(){
 
@@ -25,9 +34,11 @@ function getReply(message){
     if ($.trim(message) == '') {
         return false;
     }
-    $('<li class="replies"><p>' + message + '</p></li>').appendTo($('.messages ul'));
+    temp= message.substring(59);
+    newMessage= temp.substring(0, temp.indexOf('"'));
+    $('<li class="replies"><p>' + newMessage + '</p></li>').appendTo($('.messages ul'));
     $('.message-input input').val(null);
-    $('.contact.active .preview').html('<span>You: </span>' + message);
+    $('.contact.active .preview').html('<span>You: </span>' + newMessage);
 
 };
 

@@ -12,6 +12,7 @@ assistant = AssistantV2(
     authenticator=authenticator
 )
 
+
 # replace url
 
 assistant.set_service_url('https://api.us-south.assistant.watson.cloud.ibm.com')
@@ -19,9 +20,9 @@ assistant.set_service_url('https://api.us-south.assistant.watson.cloud.ibm.com')
 assistant_idd = 'ebaf838c-1efe-4137-8f08-470f2526aa44'
 
 # create session.
-session_idd = assistant.create_session(
-    assistant_id=assistant_idd
-).get_result()['session_id']
+session_idd  = assistant.create_session(
+        assistant_id=assistant_idd
+    ).get_result()['session_id']
 
 '''
 # Set up Assistant service.
@@ -53,6 +54,13 @@ def movie():
 @app.route('/pred')
 def predict():
     return render_template('prediction.html')
+
+# def begin():
+#     global session_idd
+#     session_idd = assistant.create_session(
+#         assistant_id=assistant_idd
+#     ).get_result()['session_id']
+    
 
 
 @app.route('/send_message/<message>')
