@@ -9,6 +9,10 @@ function begin(){
     return false;
 }
 
+function scroll(){
+    auto = document.getElementsByClassName("messages");
+    auto[0].scrollTop = auto[0].scrollHeight;
+}
 
 function sendMessage(){
 
@@ -39,7 +43,7 @@ function getReply(message){
     $('<li class="replies"><p>' + newMessage + '</p></li>').appendTo($('.messages ul'));
     $('.message-input input').val(null);
     $('.contact.active .preview').html('<span>You: </span>' + newMessage);
-
+    scroll();
 };
 
 $('.submit').click(function () {
