@@ -55,6 +55,10 @@ def movie():
 def predict():
     return render_template('prediction.html')
 
+@app.route('/test')
+def test():
+    return render_template('test.html')
+
 # def begin():
 #     global session_idd
 #     session_idd = assistant.create_session(
@@ -75,6 +79,15 @@ def send_message(message):
     ).get_result()
     return json.dumps(response)
 
+@app.route('/submit/<answer>')
+def submit(answer):
+    extroversion = 20 + int(answer[0]) - int(answer[5]) + int(answer[10]) - int(answer[15]) + int(answer[20]) - int(answer[25]) + int(answer[30]) - int(answer[35]) + int(answer[40]) - int(answer[45])
+    agreeableness = 14 - int(answer[1]) + int(answer[6]) - int(answer[11]) + int(answer[16]) - int(answer[21]) + int(answer[26]) - int(answer[31]) + int(answer[36]) + int(answer[41]) + int(answer[46])
+    conscientiousness = 14 + int(answer[2]) - int(answer[7]) + int(answer[12]) - int(answer[17]) + int(answer[22]) - int(answer[27]) + int(answer[32]) - int(answer[37]) + int(answer[42]) + int(answer[47])
+    neuroticism = 38 - int(answer[3]) + int(answer[8]) - int(answer[13]) + int(answer[18]) - int(answer[23]) - int(answer[28]) - int(answer[33]) - int(answer[38]) - int(answer[43]) - int(answer[48])
+    openness = 8 + int(answer[4]) - int(answer[9]) + int(answer[14]) - int(answer[19]) + int(answer[24]) - int(answer[29]) + int(answer[34]) + int(answer[39]) + int(answer[44]) + int(answer[49])
+    scores = [float(extroversion)/40.0, float(agreeableness)/40.0, float(extroversion)/40.0, float(conscientiousness)/40.0, float(neuroticism)/40.0,float(openness)/40.0]
+    return "calulation complete"
 
 '''
 #methods to send message and get the response
