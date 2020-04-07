@@ -55,6 +55,10 @@ def movie():
 def predict():
     return render_template('prediction.html')
 
+@app.route('/p')
+def presonality():
+    return render_template('personality.html')
+
 # def begin():
 #     global session_idd
 #     session_idd = assistant.create_session(

@@ -9,7 +9,6 @@ function begin(){
     return false;
 }
 
-
 function sendMessage(){
 
     let message = $(".message-input input").val();
@@ -20,6 +19,7 @@ function sendMessage(){
 
     $('.message-input input').val(null);
     $('.contact.active .preview').html('<span>You: </span>' + message);
+    $(".messages").animate({ scrollTop: $(document).height() }, "fast");
     $.ajax({
     url: "/send_message/"+message,
     }).done(function(e) {
@@ -36,11 +36,13 @@ function getReply(message){
     }
     temp= message.substring(59);
     newMessage= temp.substring(0, temp.indexOf('"'));
-    $('<li class="replies"><p>' + newMessage + '</p></li>').appendTo($('.messages ul'));
+    $('<li class="replies"><img src="static/images/robot_chat.png" alt="" width="30px"/><p class="box animated bounceIn">'+newMessage+'</p></li>').appendTo($('.messages ul'));
     $('.message-input input').val(null);
     $('.contact.active .preview').html('<span>You: </span>' + newMessage);
+    $(".messages").animate({ scrollTop: $(document).height() }, "fast");
 
 };
+
 
 $('.submit').click(function () {
     sendMessage();
@@ -56,3 +58,6 @@ $(window).on('keydown', function (e) {
         return false;
     }
 });
+
+
+$(".messages").animate({ scrollTop: $(document).height() }, "fast");
