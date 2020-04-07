@@ -1,4 +1,7 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
+from find_min_std import get_recommend
+from movie_detail import Movie
+from html import unescape
 import json
 from ibm_watson import AssistantV2
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator, BasicAuthenticator
@@ -53,47 +56,113 @@ def movie():
 
 @app.route('/pred')
 def predict():
-    return render_template('prediction.html')
+    movie_detail = request.args.get('data')
+
+    return render_template('prediction.html', data= data)
 
 
-@app.route('/p')
+
+@app.route('/p', methods=['GET', 'POST'])
 def presonality():
+    if request.method == 'POST':
+        #get the data from personality questionaire
+        i = 1
+        personality_detail = []
+        while i <=50:
+            q_result = request.form.get('q'+str(i))
+            if q_result == "a":
+                personality_detail.append(1)
+            elif q_result == "b":
+                personality_detail.append(2)
+            elif q_result == "c":
+                personality_detail.append(3)
+            elif q_result == "d":
+                personality_detail.append(4)
+            elif q_result == "e":
+                personality_detail.append(5)
+            else:
+                personality_detail.append(0)
+            i= i+1
+        #calculate the big fivepersonality
+        print()
+        j = 0
+        pe = 20
+        pa = 14
+        pc = 14
+        pn = 38
+        po = 8
+        while j < 10:
+            pe = pe + ((-1)**(j))* personality_detail[5*j]
+            pa = pa + ((-1)**(j+1))*personality_detail[1+5*j]
+            pc = pc + ((-1)**(j))* personality_detail[2+5*j]
+            pn = pn + ((-1)**(j+1))* personality_detail[3+5*j]
+            po = po + ((-1)**(j))* personality_detail[4+5*j]
+            j = j +1
+        big_five = [po/40, pc/40, pe/40, pa/40, pn/40]
+        print("big five are: ", str(big_five))
+        movie_detail = get_recommend(big_five, 20)
+        #handle movies data and store them into differrent categories
+        i = 0
+        movies = []
+        while i < 20:
+            movies.append(Movie(movie_detail[i][1]))
+            i = i +1
+        j = 0
+        imdbs = []
+        images = []
+        titles = []
+        synopsises = []
+        releasedes = []
+        runtimes = []
+        genres= []
+        languages = []
+        actors = []
+        creators = []
+        directors = []
+        while j < 20:
+            imdbs.append( "https://usa.newonnetflix.info/info/"+str(movie_detail[j][0]))
+            images.append(movies[j].image())
+            titles.append(unescape(movies[j].title()))
+            synopsises.append(unescape(movies[j].synopsis()))
+            releasedes.append(movies[j].released())
+            runtimes.append(movies[j].runtime())
+            genres.append(unescape(movies[j].genre()))
+            languages.append(movies[j].language())
+            actors.append(', '.join(map(str, unescape(movies[j].actor()))))
+            creators.append(', '.join(map(str, unescape(movies[j].creator()))))
+            directors.append(', '.join(map(str, unescape(movies[j].director()))))
+            j = j+1
+        print(titles)
+        data = [imdbs, images,titles, synopsises,releasedes, runtimes, genres, languages, actors, creators, directors ]
+        return render_template('prediction.html', data=data)
     return render_template('personality.html')
 
-@app.route('/test')
-def test():
-    return render_template('test.html')
 
+
+#def questionnaire():
+#    if request.method == 'POST':
+#        data = request.form.get('data')
+#        return redirect(url_for('pred', data = data))
+#    return render_template('temp_questionaire.html')
 
 # def begin():
 #     global session_idd
 #     session_idd = assistant.create_session(
 #         assistant_id=assistant_idd
 #     ).get_result()['session_id']
-    
 
 
-@app.route('/send_message/<message>')
-def send_message(message):
-    response = assistant.message(
-        assistant_idd,
-        session_idd,
-        input={
-            'message_type': 'text',
-            'text': str(message)
-        }
-    ).get_result()
-    return json.dumps(response)
 
-@app.route('/submit/<answer>')
-def submit(answer):
-    extroversion = 20 + int(answer[0]) - int(answer[5]) + int(answer[10]) - int(answer[15]) + int(answer[20]) - int(answer[25]) + int(answer[30]) - int(answer[35]) + int(answer[40]) - int(answer[45])
-    agreeableness = 14 - int(answer[1]) + int(answer[6]) - int(answer[11]) + int(answer[16]) - int(answer[21]) + int(answer[26]) - int(answer[31]) + int(answer[36]) + int(answer[41]) + int(answer[46])
-    conscientiousness = 14 + int(answer[2]) - int(answer[7]) + int(answer[12]) - int(answer[17]) + int(answer[22]) - int(answer[27]) + int(answer[32]) - int(answer[37]) + int(answer[42]) + int(answer[47])
-    neuroticism = 38 - int(answer[3]) + int(answer[8]) - int(answer[13]) + int(answer[18]) - int(answer[23]) - int(answer[28]) - int(answer[33]) - int(answer[38]) - int(answer[43]) - int(answer[48])
-    openness = 8 + int(answer[4]) - int(answer[9]) + int(answer[14]) - int(answer[19]) + int(answer[24]) - int(answer[29]) + int(answer[34]) + int(answer[39]) + int(answer[44]) + int(answer[49])
-    scores = [float(extroversion)/40.0, float(agreeableness)/40.0, float(extroversion)/40.0, float(conscientiousness)/40.0, float(neuroticism)/40.0,float(openness)/40.0]
-    return "calulation complete"
+#@app.route('//<message>')
+#def send_message(message):
+#    response = assistant.message(
+#        assistant_idd,
+#        session_idd,
+#        input={
+#            'message_type': 'text',
+###    ).get_result()
+#    return json.dumps(response)
+
 
 '''
 #methods to send message and get the response
