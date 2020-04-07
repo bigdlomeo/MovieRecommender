@@ -9,14 +9,13 @@ function begin(){
     return false;
 }
 
-<<<<<<< HEAD
-=======
+
 function scroll(){
     auto = document.getElementsByClassName("messages");
     auto[0].scrollTop = auto[0].scrollHeight;
 }
 
->>>>>>> 2bf872495553ad498e71895d005d0797c247ebef
+
 function sendMessage(){
 
     let message = $(".message-input input").val();
@@ -47,12 +46,11 @@ function getReply(message){
     $('<li class="replies"><img src="static/images/robot_chat.png" alt="" width="30px"/><p class="box animated bounceIn">'+newMessage+'</p></li>').appendTo($('.messages ul'));
     $('.message-input input').val(null);
     $('.contact.active .preview').html('<span>You: </span>' + newMessage);
-<<<<<<< HEAD
+
     $(".messages").animate({ scrollTop: $(document).height() }, "fast");
 
-=======
     scroll();
->>>>>>> 2bf872495553ad498e71895d005d0797c247ebef
+
 };
 
 

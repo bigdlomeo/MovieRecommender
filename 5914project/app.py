@@ -55,15 +55,15 @@ def movie():
 def predict():
     return render_template('prediction.html')
 
-<<<<<<< HEAD
+
 @app.route('/p')
 def presonality():
     return render_template('personality.html')
-=======
+
 @app.route('/test')
 def test():
     return render_template('test.html')
->>>>>>> 2bf872495553ad498e71895d005d0797c247ebef
+
 
 # def begin():
 #     global session_idd
