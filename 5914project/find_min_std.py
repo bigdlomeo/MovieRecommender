@@ -145,11 +145,11 @@ def getStd(file1,line, num):
 def get_recommend(num, total_need):
     #num = list(map(float, input("Enter a multiple value: ").split()))
     #print("List of floats: ", num)
-    path1 = "movies\\package1\\fillered.txt"
-    path2 = "movies\\package2\\fillered.txt"
-    path3 = "movies\\package3\\fillered.txt"
-    path4 = "movies\\package4\\fillered.txt"
-    path5 = "movies\\package5\\fillered.txt"
+    path1 = "movies/package1/fillered.txt"
+    path2 = "movies/package2/fillered.txt"
+    path3 = "movies/package3/fillered.txt"
+    path4 = "movies/package4/fillered.txt"
+    path5 = "movies/package5/fillered.txt"
     first = 0
     # Using readlines()
     file1 = open(path1)
@@ -242,7 +242,7 @@ def get_recommend(num, total_need):
         #root.PrintTree()
         #print("total nodes is "+str(total))
         print("least is :"+str(least[0])+"    "+str(least[1])+"     "+str(least[2]))
-        moviePath = "movies\\package"+str(least[2])+"\\plot.txt"
+        moviePath = "movies/package"+str(least[2])+"/plot.txt"
         plot = open(moviePath)
         line = plot.readline()
         while line:
