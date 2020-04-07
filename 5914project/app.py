@@ -61,6 +61,10 @@ def predict():
     return render_template('prediction.html', data= data)
 
 
+@app.route('/test')
+def test():
+    return render_template('test.html')
+
 
 @app.route('/p', methods=['GET', 'POST'])
 def presonality():
