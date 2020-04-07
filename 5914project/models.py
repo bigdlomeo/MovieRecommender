@@ -2,14 +2,14 @@
 
 from sqlalchemy import Column, Integer, String
 from database import Base
-from werkzeug.security import generate_password_hash, check_password_hash  # 密码保护，使用hash方法
+from werkzeug.security import generate_password_hash, check_password_hash
 
 
 class User(Base):
     __tablename__ = 'user'
     id = Column(Integer, primary_key=True, autoincrement=True)
     username = Column(String(20), nullable=False)
-    password = Column(String(200), nullable=False)  # 内部使用
+    password = Column(String(200), nullable=False)
 
     def __init__(self, username, password):
         self.username = username
@@ -19,13 +19,13 @@ class User(Base):
         return '<User %r>' % self.username
 
     @property
-    def password(self):  # 定义一个外部使用的密码
+    def password(self):
         return self.password
 
-    @password.setter  # 设置密码加密
+    @password.setter
     def password(self, row_password):
         self.password = generate_password_hash(row_password)
 
-    def check_password(self, row_password):  # 定义一个反向解密的函数
+    def check_password(self, row_password):
         result = check_password_hash(self.password, row_password)
         return result

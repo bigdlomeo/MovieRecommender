@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Name</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="static/javascript/test.js" type="text/javascript"></script>
+  <style>
+    body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+    }
+
+    .jumbotron {
+      background-color: #e6e6fa;
+      /* Orange */
+      color: #000000;
+    }
+
+    #your_results {
+      text-align: center;
+    }
+
+    #explanation {
+      text-align: center;
+    }
+
+    #form-check {
+      text-align: center;
+    }
+
+    .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+    }
+
+    .thumbnail img {
+      width: 70%;
+      height: 10%;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Name</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#movies">PERSONALITY INSIGHT</a></li>
+          <li><a href="#tv">EMOTIONAL TEST</a></li>
+          <li><a href="#contact">CHANGE PREFERENCES</a></li>
+          <li><a href="#about">HOW TO USE</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="jumbotron text-center">
+    <h1>Name Goes Here</h1>
+    <p><em>Movie Recommendation Engine</em></p>
+    <form class="form-inline">
+      <div class="input-group">
+        <em><input type="email" class="form-control" size="50" placeholder="Type something..." required></em>
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-success">Search</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <h2 id="your_results">Personality Test</h2>
+  <br>
+
+  <h3 id="explanation">The following personality test will be used to recommend you movies!</h3>
+  <br>
+
+
+  <h4 id="q1">I am the life of the party</h4>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question1" id="question1d" value="1" checked>
+    <label class="form-check-label" for="question1">
+      Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question1" id="question1sd" value="2">
+    <label class="form-check-label" for="question1">
+      Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check 50">
+    <input class="form-check-input" type="radio" name="question1" id="question1n" value="3" 50>
+    <label class="form-check-label" for="question1">
+      Nuetral
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question1" id="question1sa" value="4" checked>
+    <label class="form-check-label" for="question1">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question1" id="question1a" value="5" checked>
+    <label class="form-check-label" for="question1">
+      Agree
+    </label>
+  </div>
+  <br>
+
+  <h4 id="q2">I feel little concern for others</h4>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question2" id="question2d" value="1" checked>
+    <label class="form-check-label" for="question2">
+      Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question2" id="question2sd" value="2">
+    <label class="form-check-label" for="question2">
+      Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check 50">
+    <input class="form-check-input" type="radio" name="question2" id="question2n" value="3" 50>
+    <label class="form-check-label" for="question2">
+      Nuetral
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question2" id="question2sa" value="4" checked>
+    <label class="form-check-label" for="question2">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question2" id="question2a" value="5" checked>
+    <label class="form-check-label" for="question2">
+      Agree
+    </label>
+  </div>
+  <br>
+
+  <h4 id="q3">I am always prepared</h4>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question3" id="question3d" value="1" checked>
+    <label class="form-check-label" for="question3">
+      Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question3" id="question3sd" value="2">
+    <label class="form-check-label" for="question3">
+      Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check 50">
+    <input class="form-check-input" type="radio" name="question3" id="question3n" value="3" 50>
+    <label class="form-check-label" for="question3">
+      Nuetral
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question3" id="question3sa" value="4" checked>
+    <label class="form-check-label" for="question3">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question3" id="question3a" value="5" checked>
+    <label class="form-check-label" for="question3">
+      Agree
+    </label>
+  </div>
+  <br>
+
+  <h4 id="q4">I get stressed out easily</h4>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question4" id="question4d" value="1" checked>
+    <label class="form-check-label" for="question4">
+      Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question4" id="question4sd" value="2">
+    <label class="form-check-label" for="question4">
+      Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check 50">
+    <input class="form-check-input" type="radio" name="question4" id="question4n" value="3" 50>
+    <label class="form-check-label" for="question4">
+      Nuetral
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question4" id="question4sa" value="4" checked>
+    <label class="form-check-label" for="question4">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question4" id="question4a" value="5" checked>
+    <label class="form-check-label" for="question4">
+      Agree
+    </label>
+  </div>
+  <br>
+
+  <h4 id="q5">I have a rich vocabulary</h4>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question5" id="question5d" value="1" checked>
+    <label class="form-check-label" for="question5">
+      Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question5" id="question5sd" value="2">
+    <label class="form-check-label" for="question5">
+      Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check 50">
+    <input class="form-check-input" type="radio" name="question5" id="question5n" value="3" 50>
+    <label class="form-check-label" for="question5">
+      Nuetral
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question5" id="question5sa" value="4" checked>
+    <label class="form-check-label" for="question5">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question5" id="question5a" value="5" checked>
+    <label class="form-check-label" for="question5">
+      Agree
+    </label>
+  </div>
+  <br>
+
+  <h4 id="q6">I don't talk a lot</h4>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question6" id="question6d" value="1" checked>
+    <label class="form-check-label" for="question6">
+      Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question6" id="question6sd" value="2">
+    <label class="form-check-label" for="question6">
+      Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check 50">
+    <input class="form-check-input" type="radio" name="question6" id="question6n" value="3" 50>
+    <label class="form-check-label" for="question6">
+      Nuetral
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question6" id="question6sa" value="4" checked>
+    <label class="form-check-label" for="question6">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question6" id="question6a" value="5" checked>
+    <label class="form-check-label" for="question6">
+      Agree
+    </label>
+  </div>
+  <br>
+
+  <h4 id="q7">I am interested in people</h4>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question7" id="question7d" value="1" checked>
+    <label class="form-check-label" for="question7">
+      Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question7" id="question7sd" value="2">
+    <label class="form-check-label" for="question7">
+      Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check 50">
+    <input class="form-check-input" type="radio" name="question7" id="question7n" value="3" 50>
+    <label class="form-check-label" for="question7">
+      Nuetral
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question7" id="question7sa" value="4" checked>
+    <label class="form-check-label" for="question7">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question7" id="question7a" value="5" checked>
+    <label class="form-check-label" for="question7">
+      Agree
+    </label>
+  </div>
+  <br>
+
+  <h4 id="q8">I leave my belongings around</h4>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question8" id="question8d" value="1" checked>
+    <label class="form-check-label" for="question8">
+      Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question8" id="question8sd" value="2">
+    <label class="form-check-label" for="question8">
+      Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check 50">
+    <input class="form-check-input" type="radio" name="question8" id="question8n" value="3" 50>
+    <label class="form-check-label" for="question8">
+      Nuetral
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question8" id="question8sa" value="4" checked>
+    <label class="form-check-label" for="question8">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question8" id="question8a" value="5" checked>
+    <label class="form-check-label" for="question8">
+      Agree
+    </label>
+  </div>
+  <br>
+
+  <h4 id="q9">I am relaxed most of the time</h4>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question9" id="question9d" value="1" checked>
+    <label class="form-check-label" for="question9">
+      Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question9" id="question9sd" value="2">
+    <label class="form-check-label" for="question9">
+      Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check 50">
+    <input class="form-check-input" type="radio" name="question9" id="question9n" value="3" 50>
+    <label class="form-check-label" for="question9">
+      Nuetral
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question9" id="question9sa" value="4" checked>
+    <label class="form-check-label" for="question9">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question9" id="question9a" value="5" checked>
+    <label class="form-check-label" for="question9">
+      Agree
+    </label>
+  </div>
+  <br>
+
+  <h4 id="q10">I have difficulty understanding abstract ideas</h4>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question10" id="question10d" value="1" checked>
+    <label class="form-check-label" for="question10">
+      Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question10" id="question10sd" value="2">
+    <label class="form-check-label" for="question10">
+      Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check 50">
+    <input class="form-check-input" type="radio" name="question10" id="question10n" value="3" 50>
+    <label class="form-check-label" for="question10">
+      Nuetral
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question10" id="question10sa" value="4" checked>
+    <label class="form-check-label" for="question10">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question10" id="question10a" value="5" checked>
+    <label class="form-check-label" for="question10">
+      Agree
+    </label>
+  </div>
+  <br>
+
+  <h4 id="q11">I feel comfortable around people</h4>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question11" id="question11d" value="1" checked>
+    <label class="form-check-label" for="question11">
+      Disagree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question11" id="question11sd" value="2">
+    <label class="form-check-label" for="question11">
+      Slightly Disagree
+    </label>
+  </div>
+  <div class="form-check 50">
+    <input class="form-check-input" type="radio" name="question11" id="question11n" value="3" 50>
+    <label class="form-check-label" for="question11">
+      Nuetral
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question11" id="question11sa" value="4" checked>
+    <label class="form-check-label" for="question11">
+      Slightly Agree
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="question11" id="question11a" value="5" checked>
+    <label class="form-check-label" for="question11">
+      Agree
+    </label>
+  </div>
+  <br>
+</body>
+
+<h4 id="q12">I insult people</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question12" id="question12d" value="1" checked>
+  <label class="form-check-label" for="question12">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question12" id="question12sd" value="2">
+  <label class="form-check-label" for="question12">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question12" id="question12n" value="3" 50>
+  <label class="form-check-label" for="question12">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question12" id="question12sa" value="4" checked>
+  <label class="form-check-label" for="question12">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question12" id="question12a" value="5" checked>
+  <label class="form-check-label" for="question12">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q13">I pay attention to details</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question13" id="question13d" value="1" checked>
+  <label class="form-check-label" for="question13">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question13" id="question13sd" value="2">
+  <label class="form-check-label" for="question13">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question13" id="question13n" value="3" 50>
+  <label class="form-check-label" for="question13">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question13" id="question13sa" value="4" checked>
+  <label class="form-check-label" for="question13">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question13" id="question13a" value="5" checked>
+  <label class="form-check-label" for="question13">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q14">I worry about things</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question14" id="question14d" value="1" checked>
+  <label class="form-check-label" for="question14">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question14" id="question14sd" value="2">
+  <label class="form-check-label" for="question14">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question14" id="question14n" value="3" 50>
+  <label class="form-check-label" for="question14">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question14" id="question14sa" value="4" checked>
+  <label class="form-check-label" for="question14">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question14" id="question14a" value="5" checked>
+  <label class="form-check-label" for="question14">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q15">I have a vivid imagination</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question15" id="question15d" value="1" checked>
+  <label class="form-check-label" for="question15">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question15" id="question15sd" value="2">
+  <label class="form-check-label" for="question15">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question15" id="question15n" value="3" 50>
+  <label class="form-check-label" for="question15">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question15" id="question15sa" value="4" checked>
+  <label class="form-check-label" for="question15">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question15" id="question15a" value="5" checked>
+  <label class="form-check-label" for="question15">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q16">I keep in the background</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question16" id="question16d" value="1" checked>
+  <label class="form-check-label" for="question16">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question16" id="question16sd" value="2">
+  <label class="form-check-label" for="question16">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question16" id="question16n" value="3" 50>
+  <label class="form-check-label" for="question16">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question16" id="question16sa" value="4" checked>
+  <label class="form-check-label" for="question16">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question16" id="question16a" value="5" checked>
+  <label class="form-check-label" for="question16">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q17">I sympathize with others' feelings</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question17" id="question17d" value="1" checked>
+  <label class="form-check-label" for="question17">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question17" id="question17sd" value="2">
+  <label class="form-check-label" for="question17">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question17" id="question17n" value="3" 50>
+  <label class="form-check-label" for="question17">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question17" id="question17sa" value="4" checked>
+  <label class="form-check-label" for="question17">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question17" id="question17a" value="5" checked>
+  <label class="form-check-label" for="question17">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q18">I make a mess of things</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question18" id="question18d" value="1" checked>
+  <label class="form-check-label" for="question18">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question18" id="question18sd" value="2">
+  <label class="form-check-label" for="question18">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question18" id="question18n" value="3" 50>
+  <label class="form-check-label" for="question18">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question18" id="question18sa" value="4" checked>
+  <label class="form-check-label" for="question18">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question18" id="question18a" value="5" checked>
+  <label class="form-check-label" for="question18">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q19">I seldom feel blue</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question19" id="question19d" value="1" checked>
+  <label class="form-check-label" for="question19">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question19" id="question19sd" value="2">
+  <label class="form-check-label" for="question19">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question19" id="question19n" value="3" 50>
+  <label class="form-check-label" for="question19">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question19" id="question19sa" value="4" checked>
+  <label class="form-check-label" for="question19">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question19" id="question19a" value="5" checked>
+  <label class="form-check-label" for="question19">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q20">I am not interested in abstract ideas</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question20" id="question20d" value="1" checked>
+  <label class="form-check-label" for="question20">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question20" id="question20sd" value="2">
+  <label class="form-check-label" for="question20">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question20" id="question20n" value="3" 50>
+  <label class="form-check-label" for="question20">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question20" id="question20sa" value="4" checked>
+  <label class="form-check-label" for="question20">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question20" id="question20a" value="5" checked>
+  <label class="form-check-label" for="question20">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q21">I start conversations</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question21" id="question21d" value="1" checked>
+  <label class="form-check-label" for="question21">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question21" id="question21sd" value="2">
+  <label class="form-check-label" for="question21">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question21" id="question21n" value="3" 50>
+  <label class="form-check-label" for="question21">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question21" id="question21sa" value="4" checked>
+  <label class="form-check-label" for="question21">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question21" id="question21a" value="5" checked>
+  <label class="form-check-label" for="question21">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q22">I am not interested in other people's problems</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question22" id="question22d" value="1" checked>
+  <label class="form-check-label" for="question22">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question22" id="question22sd" value="2">
+  <label class="form-check-label" for="question22">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question22" id="question22n" value="3" 50>
+  <label class="form-check-label" for="question22">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question22" id="question22sa" value="4" checked>
+  <label class="form-check-label" for="question22">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question22" id="question22a" value="5" checked>
+  <label class="form-check-label" for="question22">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q23">I get chores done right away</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question23" id="question23d" value="1" checked>
+  <label class="form-check-label" for="question23">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question23" id="question23sd" value="2">
+  <label class="form-check-label" for="question23">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question23" id="question23n" value="3" 50>
+  <label class="form-check-label" for="question23">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question23" id="question23sa" value="4" checked>
+  <label class="form-check-label" for="question23">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question23" id="question23a" value="5" checked>
+  <label class="form-check-label" for="question23">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q24">I am easily disturbed</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question24" id="question24d" value="1" checked>
+  <label class="form-check-label" for="question24">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question24" id="question24sd" value="2">
+  <label class="form-check-label" for="question24">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question24" id="question24n" value="3" 50>
+  <label class="form-check-label" for="question24">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question24" id="question24sa" value="4" checked>
+  <label class="form-check-label" for="question24">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question24" id="question24a" value="5" checked>
+  <label class="form-check-label" for="question24">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q25">I have excellent ideas</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question25" id="question25d" value="1" checked>
+  <label class="form-check-label" for="question25">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question25" id="question25sd" value="2">
+  <label class="form-check-label" for="question25">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question25" id="question25n" value="3" 50>
+  <label class="form-check-label" for="question25">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question25" id="question25sa" value="4" checked>
+  <label class="form-check-label" for="question25">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question25" id="question25a" value="5" checked>
+  <label class="form-check-label" for="question25">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q26">I have little to say</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question26" id="question26d" value="1" checked>
+  <label class="form-check-label" for="question26">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question26" id="question26sd" value="2">
+  <label class="form-check-label" for="question26">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question26" id="question26n" value="3" 50>
+  <label class="form-check-label" for="question26">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question26" id="question26sa" value="4" checked>
+  <label class="form-check-label" for="question26">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question26" id="question26a" value="5" checked>
+  <label class="form-check-label" for="question26">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q27">I have a soft heart</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question27" id="question27d" value="1" checked>
+  <label class="form-check-label" for="question27">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question27" id="question27sd" value="2">
+  <label class="form-check-label" for="question27">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question27" id="question27n" value="3" 50>
+  <label class="form-check-label" for="question27">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question27" id="question27sa" value="4" checked>
+  <label class="form-check-label" for="question27">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question27" id="question27a" value="5" checked>
+  <label class="form-check-label" for="question27">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q28">I often forget to put things back in their proper place</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question28" id="question28d" value="1" checked>
+  <label class="form-check-label" for="question28">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question28" id="question28sd" value="2">
+  <label class="form-check-label" for="question28">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question28" id="question28n" value="3" 50>
+  <label class="form-check-label" for="question28">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question28" id="question28sa" value="4" checked>
+  <label class="form-check-label" for="question28">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question28" id="question28a" value="5" checked>
+  <label class="form-check-label" for="question28">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q29">I get upset easily</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question29" id="question29d" value="1" checked>
+  <label class="form-check-label" for="question29">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question29" id="question29sd" value="2">
+  <label class="form-check-label" for="question29">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question29" id="question29n" value="3" 50>
+  <label class="form-check-label" for="question29">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question29" id="question29sa" value="4" checked>
+  <label class="form-check-label" for="question29">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question29" id="question29a" value="5" checked>
+  <label class="form-check-label" for="question29">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q30">I do not have a good imagination</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question30" id="question30d" value="1" checked>
+  <label class="form-check-label" for="question30">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question30" id="question30sd" value="2">
+  <label class="form-check-label" for="question30">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question30" id="question30n" value="3" 50>
+  <label class="form-check-label" for="question30">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question30" id="question30sa" value="4" checked>
+  <label class="form-check-label" for="question30">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question30" id="question30a" value="5" checked>
+  <label class="form-check-label" for="question30">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q31">I talk to a lot of different people at parties</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question31" id="question31d" value="1" checked>
+  <label class="form-check-label" for="question31">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question31" id="question31sd" value="2">
+  <label class="form-check-label" for="question31">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question31" id="question31n" value="3" 50>
+  <label class="form-check-label" for="question31">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question31" id="question31sa" value="4" checked>
+  <label class="form-check-label" for="question31">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question31" id="question31a" value="5" checked>
+  <label class="form-check-label" for="question31">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q32">I am not really interested in others</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question32" id="question32d" value="1" checked>
+  <label class="form-check-label" for="question32">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question32" id="question32sd" value="2">
+  <label class="form-check-label" for="question32">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question32" id="question32n" value="3" 50>
+  <label class="form-check-label" for="question32">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question32" id="question32sa" value="4" checked>
+  <label class="form-check-label" for="question32">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question32" id="question32a" value="5" checked>
+  <label class="form-check-label" for="question32">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q33">I like order</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question33" id="question33d" value="1" checked>
+  <label class="form-check-label" for="question33">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question33" id="question33sd" value="2">
+  <label class="form-check-label" for="question33">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question33" id="question33n" value="3" 50>
+  <label class="form-check-label" for="question33">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question33" id="question33sa" value="4" checked>
+  <label class="form-check-label" for="question33">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question33" id="question33a" value="5" checked>
+  <label class="form-check-label" for="question33">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q34">I change my mood a lot</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question34" id="question34d" value="1" checked>
+  <label class="form-check-label" for="question34">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question34" id="question34sd" value="2">
+  <label class="form-check-label" for="question34">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question34" id="question34n" value="3" 50>
+  <label class="form-check-label" for="question34">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question34" id="question34sa" value="4" checked>
+  <label class="form-check-label" for="question34">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question34" id="question34a" value="5" checked>
+  <label class="form-check-label" for="question34">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q35">I am quick to understand things</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question35" id="question35d" value="1" checked>
+  <label class="form-check-label" for="question35">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question35" id="question35sd" value="2">
+  <label class="form-check-label" for="question35">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question35" id="question35n" value="3" 50>
+  <label class="form-check-label" for="question35">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question35" id="question35sa" value="4" checked>
+  <label class="form-check-label" for="question35">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question35" id="question35a" value="5" checked>
+  <label class="form-check-label" for="question35">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q36">I don't like to draw attention to myself</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question36" id="question36d" value="1" checked>
+  <label class="form-check-label" for="question36">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question36" id="question36sd" value="2">
+  <label class="form-check-label" for="question36">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question36" id="question36n" value="3" 50>
+  <label class="form-check-label" for="question36">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question36" id="question36sa" value="4" checked>
+  <label class="form-check-label" for="question36">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question36" id="question36a" value="5" checked>
+  <label class="form-check-label" for="question36">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q37">I take time out for others</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question37" id="question37d" value="1" checked>
+  <label class="form-check-label" for="question37">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question37" id="question37sd" value="2">
+  <label class="form-check-label" for="question37">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question37" id="question37n" value="3" 50>
+  <label class="form-check-label" for="question37">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question37" id="question37sa" value="4" checked>
+  <label class="form-check-label" for="question37">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question37" id="question37a" value="5" checked>
+  <label class="form-check-label" for="question37">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q38">I shirk my duties</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question38" id="question38d" value="1" checked>
+  <label class="form-check-label" for="question38">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question38" id="question38sd" value="2">
+  <label class="form-check-label" for="question38">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question38" id="question38n" value="3" 50>
+  <label class="form-check-label" for="question38">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question38" id="question38sa" value="4" checked>
+  <label class="form-check-label" for="question38">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question38" id="question38a" value="5" checked>
+  <label class="form-check-label" for="question38">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q39">I have frequent mood swings</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question39" id="question39d" value="1" checked>
+  <label class="form-check-label" for="question39">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question39" id="question39sd" value="2">
+  <label class="form-check-label" for="question39">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question39" id="question39n" value="3" 50>
+  <label class="form-check-label" for="question39">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question39" id="question39sa" value="4" checked>
+  <label class="form-check-label" for="question39">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question39" id="question39a" value="5" checked>
+  <label class="form-check-label" for="question39">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q40">I use difficult words</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question40" id="question40d" value="1" checked>
+  <label class="form-check-label" for="question40">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question40" id="question40sd" value="2">
+  <label class="form-check-label" for="question40">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question40" id="question40n" value="3" 50>
+  <label class="form-check-label" for="question40">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question40" id="question40sa" value="4" checked>
+  <label class="form-check-label" for="question40">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question40" id="question40a" value="5" checked>
+  <label class="form-check-label" for="question40">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q41">I don't mind being the center of attention</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question41" id="question41d" value="1" checked>
+  <label class="form-check-label" for="question41">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question41" id="question41sd" value="2">
+  <label class="form-check-label" for="question41">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question41" id="question41n" value="3" 50>
+  <label class="form-check-label" for="question41">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question41" id="question41sa" value="4" checked>
+  <label class="form-check-label" for="question41">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question41" id="question41a" value="5" checked>
+  <label class="form-check-label" for="question41">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q42">I feel others' emotions</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question42" id="question42d" value="1" checked>
+  <label class="form-check-label" for="question42">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question42" id="question42sd" value="2">
+  <label class="form-check-label" for="question42">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question42" id="question42n" value="3" 50>
+  <label class="form-check-label" for="question42">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question42" id="question42sa" value="4" checked>
+  <label class="form-check-label" for="question42">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question42" id="question42a" value="5" checked>
+  <label class="form-check-label" for="question42">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q43">I follow a schedule</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question43" id="question43d" value="1" checked>
+  <label class="form-check-label" for="question43">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question43" id="question43sd" value="2">
+  <label class="form-check-label" for="question43">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question43" id="question43n" value="3" 50>
+  <label class="form-check-label" for="question43">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question43" id="question43sa" value="4" checked>
+  <label class="form-check-label" for="question43">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question43" id="question43a" value="5" checked>
+  <label class="form-check-label" for="question43">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q44">I get irritated easily</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question44" id="question44d" value="1" checked>
+  <label class="form-check-label" for="question44">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question44" id="question44sd" value="2">
+  <label class="form-check-label" for="question44">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question44" id="question44n" value="3" 50>
+  <label class="form-check-label" for="question44">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question44" id="question44sa" value="4" checked>
+  <label class="form-check-label" for="question44">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question44" id="question44a" value="5" checked>
+  <label class="form-check-label" for="question44">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q45">I spend time reflecting on things</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question45" id="question45d" value="1" checked>
+  <label class="form-check-label" for="question45">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question45" id="question45sd" value="2">
+  <label class="form-check-label" for="question45">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question45" id="question45n" value="3" 50>
+  <label class="form-check-label" for="question45">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question45" id="question45sa" value="4" checked>
+  <label class="form-check-label" for="question45">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question45" id="question45a" value="5" checked>
+  <label class="form-check-label" for="question45">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q46">I am quiet around stangers</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question46" id="question46d" value="1" checked>
+  <label class="form-check-label" for="question46">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question46" id="question46sd" value="2">
+  <label class="form-check-label" for="question46">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question46" id="question46n" value="3" 50>
+  <label class="form-check-label" for="question46">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question46" id="question46sa" value="4" checked>
+  <label class="form-check-label" for="question46">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question46" id="question46a" value="5" checked>
+  <label class="form-check-label" for="question46">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q47">I make people feel at ease</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question47" id="question47d" value="1" checked>
+  <label class="form-check-label" for="question47">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question47" id="question47sd" value="2">
+  <label class="form-check-label" for="question47">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question47" id="question47n" value="3" 50>
+  <label class="form-check-label" for="question47">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question47" id="question47sa" value="4" checked>
+  <label class="form-check-label" for="question47">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question47" id="question47a" value="5" checked>
+  <label class="form-check-label" for="question47">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q48">I am exact in my work</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question48" id="question48d" value="1" checked>
+  <label class="form-check-label" for="question48">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question48" id="question48sd" value="2">
+  <label class="form-check-label" for="question48">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question48" id="question48n" value="3" 50>
+  <label class="form-check-label" for="question48">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question48" id="question48sa" value="4" checked>
+  <label class="form-check-label" for="question48">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question48" id="question48a" value="5" checked>
+  <label class="form-check-label" for="question48">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q49">I often feel blue</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question49" id="question49d" value="1" checked>
+  <label class="form-check-label" for="question49">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question49" id="question49sd" value="2">
+  <label class="form-check-label" for="question49">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check 50">
+  <input class="form-check-input" type="radio" name="question49" id="question49n" value="3" 50>
+  <label class="form-check-label" for="question49">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question49" id="question49sa" value="4" checked>
+  <label class="form-check-label" for="question49">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question49" id="question49a" value="5" checked>
+  <label class="form-check-label" for="question49">
+    Agree
+  </label>
+</div>
+<br>
+
+<h4 id="q50">I am full of ideas</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question50" id="question50d" value="1" checked>
+  <label class="form-check-label" for="question50">
+    Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question50" id="question50sd" value="2">
+  <label class="form-check-label" for="question50">
+    Slightly Disagree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question50" id="question50n" value="3" 50>
+  <label class="form-check-label" for="question50">
+    Nuetral
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question50" id="question50sa" value="4" checked>
+  <label class="form-check-label" for="question50">
+    Slightly Agree
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="question50" id="question50a" value="5" checked>
+  <label class="form-check-label" for="question50">
+    Agree
+  </label>
+</div>
+<br>
+
+<button type="button" class="btn btn-primary" id="submit" onclick="submit()">Submit</button>
+
+</html>
