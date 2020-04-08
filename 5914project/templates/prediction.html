@@ -1,233 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
-body {
-  background-color: coral;
-}
-.center {
-	margin: auto;
-	width: 75%;
-	padding: 10px;
-	margin-top: 100px; !important;
-}
-h2.pred {
-	font-style: italic;
-	font-size: 100px;
-	font-weight: bold;
-	font-color: red;
-}
-.button {
+  <title>Name</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+	body {
+		font: 400 15px Lato, sans-serif;
+		line-height: 1.8;
+		color: #818181;
+	}
+	.jumbotron {
+	  background-color: #e6e6fa; /* Orange */
+	  color: #000000;
+	}
+	#your_results {
+		text-align: center;
+	}
+	.thumbnail {
+	  padding: 0 0 15px 0;
+	  border: none;
+	  border-radius: 0;
+	}
 
-  border-radius: 4px;
-  background-color: black;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 28px;
-  padding: 20px;
-  width: 200px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin-left: 1000px;
-
-}
-
-.right {
-	margin-left: 1000px;
-}
-
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-.button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
-.button:hover span {
-  padding-right: 25px;
-}
-
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
-}
-.button12 {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-
-  font-size: 16px;
-  margin-left: 100px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
-.button1 {
-  background-color: white;
-  color: black;
-  border: 2px solid #4CAF50;
-}
-.card {
-  /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  color: #D3CFCE
-  transition: 0.3s;
-}
-
-/* On mouse-over, add a deeper shadow */
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-/* Add some padding inside the card container */
-.container {
-  padding: 2px 16px;
-}
-.button1:hover {
-  background-color: #4CAF50;
-  color: white;
-}
-</style>
-<title>Prediction</title>
+	.thumbnail img {
+	  width: 70%;
+	  height: 10%;
+	  margin-bottom: 10px;
+	}
+  </style>
 </head>
+
 <body>
-
-	<div class = "center">
-		<p><strong><em>Sounds like you could enjoy</em></strong></p>
-    <div class="all_movies">
-      <div class="card" >
-        <div class="movies.image" style="position:relative">
-          <img src={{data[1][0]}} alt="movies poster" height="209" width="140" class="load.image">
-        </div>
-        <div class="movie.detail">
-          <h3 class= "movie.title">
-            <a href={{data[0][0]}}> {{data[2][0]}} </a>
-            <span> ({{data[4][0]}})</span>
-          </h3>
-          <p class= "movie.duration">
-            <span>R | {{ data[5][0]}} | {{data[6][0]}}  | {{data[7][0]}}</span>
-          </p>
-          <p class="movie.synopsis">
-            {{data[3][0]}}
-          </p>
-          <p class="movie.people">
-            Directors: {{data[10][0]}}
-            | Creators: {{data[9][0]}}
-            | Actors: {{data[8][0]}}
-          </p>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Name</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#movies">PERSONALITY INSIGHT</a></li>
+          <li><a href="#tv">EMOTIONAL TEST</a></li>
+          <li><a href="#contact">CHANGE PREFERENCES</a></li>
+          <li><a href="#about">HOW TO USE</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="jumbotron text-center">
+      <h1>Name Goes Here</h1>
+      <p><em>Movie Recommendation Engine</em></p>
+      <form class="form-inline">
+      <div class="input-group">
+        <em><input type="email" class="form-control" size="50" placeholder="Type something..." required></em>
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-success">Search</button>
         </div>
       </div>
-
-      <div class="card" >
-        <div class="movies.image" style="position:relative">
-          <img src={{data[1][1]}} alt="movies poster" height="209" width="140" class="load.image">
-        </div>
-        <div class="movie.detail">
-          <h3 class= "movie.title">
-            <a href={{data[0][1]}}> {{data[2][1]}} </a>
-            <span> ({{data[4][1]}})</span>
-          </h3>
-          <p class= "movie.duration">
-            <span>R | {{ data[5][1]}} | {{data[6][1]}}  | {{data[7][1]}}</span>
-          </p>
-          <p class="movie.synopsis">
-            {{data[3][1]}}
-          </p>
-          <p class="movie.people">
-            Directors: {{data[10][1]}}
-            | Creators: {{data[9][1]}}
-            | Actors: {{data[8][1]}}
-          </p>
-        </div>
-      </div>
-
-      <div class="card" >
-        <div class="movies.image" style="position:relative">
-          <img src={{data[1][2]}} alt="movies poster" height="209" width="140" class="load.image">
-        </div>
-        <div class="movie.detail">
-          <h3 class= "movie.title">
-            <a href={{data[0][2]}}> {{data[2][2]}} </a>
-            <span> ({{data[4][2]}})</span>
-          </h3>
-          <p class= "movie.duration">
-            <span>R | {{ data[5][2]}} | {{data[6][2]}}  | {{data[7][2]}}</span>
-          </p>
-          <p class="movie.synopsis">
-            {{data[3][2]}}
-          </p>
-          <p class="movie.people">
-            Directors: {{data[10][2]}}
-            | Creators: {{data[9][2]}}
-            | Actors: {{data[8][2]}}
-          </p>
-        </div>
-      </div>
-
-      <div class="card" >
-        <div class="movies.image" style="position:relative">
-          <img src={{data[1][3]}} alt="movies poster" height="209" width="140" class="load.image">
-        </div>
-        <div class="movie.detail">
-          <h3 class= "movie.title">
-            <a href={{data[0][3]}}> {{data[2][3]}} </a>
-            <span> ({{data[4][3]}})</span>
-          </h3>
-          <p class= "movie.duration">
-            <span>R | {{ data[5][3]}} | {{data[6][3]}}  | {{data[7][3]}}</span>
-          </p>
-          <p class="movie.synopsis">
-            {{data[3][3]}}
-          </p>
-          <p class="movie.people">
-            Directors: {{data[10][3]}}
-            | Creators: {{data[9][3]}}
-            | Actors: {{data[8][3]}}
-          </p>
-        </div>
-      </div>
-
-      <div class="card" >
-        <div class="movies.image" style="position:relative">
-          <img src={{data[1][4]}} alt="movies poster" height="209" width="140" class="load.image">
-        </div>
-        <div class="movie.detail">
-          <h3 class= "movie.title">
-            <a href={{data[0][4]}}> {{data[2][4]}} </a>
-            <span> ({{data[4][4]}})</span>
-          </h3>
-          <p class= "movie.duration">
-            <span>R | {{ data[5][4]}} | {{data[6][4]}}  | {{data[7][4]}}</span>
-          </p>
-          <p class="movie.synopsis">
-            {{data[3][4]}}
-          </p>
-          <p class="movie.people">
-            Directors: {{data[10][4]}}
-            | Creators: {{data[9][4]}}
-            | Actors: {{data[8][4]}}
-          </p>
-        </div>
-      </div>
-
-
+    </form>
   </div>
-	</div>
-	<div class="left">
-		<button class="button12 button1" onclick="window.location.href='/'">Talk to AI some more</button>
-	</div>
+  <h2 id="your_results">Your Results</h2>
+  <div id="portfolio" class="container-fluid text-center bg-grey">
+  <br>
+
+  <div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src={{data[1][0]}} alt="Paris" width="300"><br>
+        <p><strong><a href={{data[0][1]}}> {{data[2][0]}}</a></strong></p>
+        <span>{{data[4][0]}}</span>
+        <span>R | {{ data[5][0]}} | {{data[6][0]}}  | {{data[7][0]}}</span>
+
+        <p> <br>{{data[3][0]}}</p>
+        <p><strong>Director(s):</strong> {{data[10][0]}}<br>
+          <strong>Creator(s):</strong> {{data[9][0]}}<br>
+          <strong>Actors:</strong> {{data[8][0]}}</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src={{data[1][1]}} alt="movie poster" width="300"><br>
+        <p><strong><a href={{data[0][1]}}> {{data[2][1]}}</a></strong></p>
+        <span>{{data[4][1]}}</span>
+        <span>R | {{ data[5][1]}} | {{data[6][1]}}  | {{data[7][1]}}</span>
+
+        <p> <br>{{data[3][1]}}</p>
+        <p><strong>Director(s):</strong> {{data[10][1]}}<br>
+          <strong>Creator(s):</strong> {{data[9][1]}}<br>
+          <strong>Actors:</strong> {{data[8][1]}}</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src={{data[1][2]}} alt="movie poster" width="300"><br>
+        <p><strong><a href={{data[0][2]}}> {{data[2][2]}}</a></strong></p>
+        <span>{{data[4][2]}}</span>
+        <span>R | {{ data[5][2]}} | {{data[6][2]}}  | {{data[7][2]}}</span>
+
+        <p> <br>{{data[3][2]}}</p>
+        <p><strong>Director(s):</strong> {{data[10][2]}}<br>
+          <strong>Creator(s):</strong> {{data[9][2]}}<br>
+          <strong>Actors:</strong> {{data[8][2]}}</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src={{data[1][3]}} alt="movie poster" width="300"><br>
+        <p><strong><a href={{data[0][3]}}> {{data[2][3]}}</a></strong></p>
+        <span>{{data[4][3]}}</span>
+        <span>R | {{ data[5][3]}} | {{data[6][3]}}  | {{data[7][3]}}</span>
+
+        <p> <br>{{data[3][3]}}</p>
+        <p><strong>Director(s):</strong> {{data[10][3]}}<br>
+          <strong>Creator(s):</strong> {{data[9][3]}}<br>
+          <strong>Actors:</strong> {{data[8][3]}}</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src={{data[1][4]}} alt="movie poster" width="300"><br>
+        <p><strong><a href={{data[0][4]}}> {{data[2][4]}}</a></strong></p>
+        <span>{{data[4][4]}}</span>
+        <span>R | {{ data[5][4]}} | {{data[6][4]}}  | {{data[7][4]}}</span>
+
+        <p> <br>{{data[3][4]}}</p>
+        <p><strong>Director(s):</strong> {{data[10][4]}}<br>
+          <strong>Creator(s):</strong> {{data[9][4]}}<br>
+          <strong>Actors:</strong> {{data[8][4]}}</p>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
