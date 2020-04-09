@@ -8,7 +8,7 @@ from ibm_cloud_sdk_core.authenticators import IAMAuthenticator, BasicAuthenticat
 
 app = Flask(__name__)
 
-authenticator = IAMAuthenticator('JE-aM2ut2o22Ky_2WdQmEgAnMwEgIqBgmh1Eipjw2pm4')
+authenticator = IAMAuthenticator('k3AEmH-u5f0HYHSySDDGbWzMvtaA0IqLkanMUVouDmUa')
 
 assistant = AssistantV2(
     version='2020-02-05',
@@ -20,7 +20,7 @@ assistant = AssistantV2(
 
 assistant.set_service_url('https://api.us-south.assistant.watson.cloud.ibm.com')
 
-assistant_idd = 'ebaf838c-1efe-4137-8f08-470f2526aa44'
+assistant_idd = 'bf5d1798-657f-47be-925f-0d26863c731b'
 
 # create session.
 session_idd  = assistant.create_session(
