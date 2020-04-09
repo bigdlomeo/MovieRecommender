@@ -27,6 +27,8 @@ session_idd  = assistant.create_session(
         assistant_id=assistant_idd
     ).get_result()['session_id']
 
+
+
 '''
 # Set up Assistant service.
 authenticator = IAMAuthenticator('{apikey}') # replace with API key
@@ -64,6 +66,39 @@ def predict():
 @app.route('/test')
 def test():
     return render_template('test.html')
+
+
+
+
+
+
+
+
+@app.route('/send_message/<message>')
+def send_message(message):
+    response = assistant.message(
+        assistant_idd,
+        session_idd,
+        input={
+            'message_type': 'text',
+            'text': str(message)
+        }
+    ).get_result()['output']['generic'][0]
+    
+    print('-'*50)
+    print(type(response))
+    print('-'*50)
+    print(response)
+    print("end")
+
+
+    return json.dumps(response)
+
+
+
+
+
+
 
 
 @app.route('/p', methods=['GET', 'POST'])
