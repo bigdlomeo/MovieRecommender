@@ -63,18 +63,7 @@
 {% block main %}
         {% include '_navbar.html'%}
 
-         <div class="jumbotron text-center">
-            <h1>Name Goes Here</h1>
-            <p><em>Movie Recommendation Engine</em></p>
-            <form class="form-inline">
-              <div class="input-group">
-                <em><input type="email" class="form-control" size="50" placeholder="Type something..." required></em>
-                <div class="input-group-btn">
-                  <button type="button" class="btn btn-success">Search</button>
-                </div>
-              </div>
-            </form>
-        </div>
+        {% include '_header.html'%}
         <div id = "container">
             <img src="static/images/test.png" width="50px" height="50px" class="box animated swing" id="test-icon">
             <div id = "title-head">
