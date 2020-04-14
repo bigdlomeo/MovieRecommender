@@ -63,7 +63,19 @@
 {% block main %}
         {% include '_navbar.html'%}
 
-        {% include '_header.html'%}
+
+        <div class="jumbotron text-center">
+          <h1>Name Goes Here</h1>
+          <p><em>Movie Recommendation Engine</em></p>
+          <form class="form-inline" method="post" >
+            <div class="input-group">
+              <textarea name="movie_search" rows="1" cols="50" class="form-control" placeholder="Type something..." ></textarea>
+              <div class="input-group-btn">
+                <button type="submit" class="btn btn-success">Search</button>
+              </div>
+            </div>
+          </form>
+      </div>
         <div id = "container">
             <img src="static/images/test.png" width="50px" height="50px" class="box animated swing" id="test-icon">
             <div id = "title-head">
