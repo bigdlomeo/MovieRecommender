@@ -83,16 +83,15 @@ def send_message(message):
             'message_type': 'text',
             'text': str(message)
         }
-    ).get_result()['output']['generic'][0]
-    
-    print('-'*50)
-    print(type(response))
-    print('-'*50)
-    print(response)
-    print("end")
+    ).get_result()['output']['generic'][0]['text']
 
-
-    return json.dumps(response)
+    # print(response)
+    # return "reponse str,false" if assistant are going to recommend 
+    # return "reponse str,true" if assistant just talk e.g : reply to 'how are you? ' ;
+    if response[0] == '{':
+        return response,True
+    else:
+        return response,False
 
 
 
