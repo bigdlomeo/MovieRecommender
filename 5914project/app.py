@@ -59,11 +59,40 @@ def movie():
 @app.route('/pred', methods=['GET', 'POST'])
 def predict():
     data = request.args.get('data')
-
     if request.method == 'POST' and 'movie_search' in request.form:
         keyword = request.form.get("movie_search")
-        movie= requestIBMD(keyword)
-        print(movie)
+        movies= requestIBMD(keyword)
+        print("from prediction page: ")
+        print(movies)
+        j = 0
+        imdbs = []
+        images = []
+        titles = []
+        synopsises = []
+        releasedes = []
+        runtimes = []
+        genres= []
+        languages = []
+        actors = []
+        creators = []
+        directors = []
+        while j < 5:
+            if sig==1:
+                imdbs.append(movies[j][0])
+                images.append(movies[j][1])
+                titles.append(movies[j][2])
+                synopsises.append(movies[j][3])
+                releasedes.append(movies[j][4])
+                runtimes.append(movies[j][5])
+                genres.append(movies[j][6])
+                languages.append(movies[j][7])
+                actors.append(movies[j][8])
+                creators.append(movies[j][9])
+                directors.append(movies[j][10])
+            j = j+1
+        print(titles)
+        data = [imdbs, images,titles, synopsises,releasedes, runtimes, genres, languages, actors, creators, directors]
+        return render_template('prediction.html', data=data)
     return render_template('prediction.html', data= data)
 
 
@@ -154,7 +183,7 @@ def presonality():
             #handle movies data and store them into differrent categories
             i = 0
             while i < 20:
-                movies.append.append(Movie(movie_detail[i][1]))
+                movies.append(Movie(movie_detail[i][1]))
                 i = i +1
         j = 0
         imdbs = []
