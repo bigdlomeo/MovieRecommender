@@ -8,7 +8,7 @@ def requestIBMD(word):
     'x-rapidapi-host': "imdb8.p.rapidapi.com",
     'x-rapidapi-key': "ecfcd67f29msh1ad906a110869b4p1edd2djsne99126bc2a3b"
     }
-    conn.request("GET", "/title/find?q=game%20of%20thr", headers=headers)
+    conn.request("GET", "/title/find?q="+word, headers=headers)
 
     res = conn.getresponse()
 
