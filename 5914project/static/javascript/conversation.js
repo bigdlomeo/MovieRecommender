@@ -30,6 +30,7 @@ function sendMessage(){
     $.ajax({
     url: "/send_message/"+message,
     }).done(function(e) {
+        console.log(e);
         getReply(e);
     });
 
@@ -38,14 +39,13 @@ function sendMessage(){
 
 
 function getReply(message){
+    console.log(message);
     if ($.trim(message) == '') {
         return false;
     }
-    temp= message.substring(59);
-    newMessage= temp.substring(0, temp.indexOf('"'));
-    $('<li class="replies"><img src="static/images/robot_chat.png" alt="" width="30px"/><p class="box animated bounceIn">'+newMessage+'</p></li>').appendTo($('.messages ul'));
+    $('<li class="replies"><img src="static/images/robot_chat.png" alt="" width="30px"/><p class="box animated bounceIn">'+message+'</p></li>').appendTo($('.messages ul'));
     $('.message-input input').val(null);
-    $('.contact.active .preview').html('<span>You: </span>' + newMessage);
+    $('.contact.active .preview').html('<span>You: </span>' + message);
 
     $(".messages").animate({ scrollTop: $(document).height() }, "fast");
 
