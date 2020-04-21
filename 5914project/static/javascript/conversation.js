@@ -37,7 +37,6 @@ function sendMessage(){
 
 
 function getReply(message){
-    console.log(message)
     if ($.trim(message) == '') {
         return false;
     }
