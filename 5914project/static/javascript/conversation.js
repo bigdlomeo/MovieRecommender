@@ -17,7 +17,6 @@ function scroll(){
 
 
 function sendMessage(){
-
     let message = $(".message-input input").val();
     if ($.trim(message) == '') {
         return false;
@@ -30,7 +29,6 @@ function sendMessage(){
     $.ajax({
     url: "/send_message/"+message,
     }).done(function(e) {
-        console.log(e);
         getReply(e);
     });
 
@@ -39,7 +37,7 @@ function sendMessage(){
 
 
 function getReply(message){
-    console.log(message);
+    console.log(message)
     if ($.trim(message) == '') {
         return false;
     }

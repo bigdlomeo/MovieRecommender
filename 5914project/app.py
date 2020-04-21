@@ -126,11 +126,16 @@ def send_message(message):
     # return "reponse str,false" if assistant are going to recommend 
     # return "reponse str,true" if assistant just talk e.g : reply to 'how are you? ' ;
     if response[0] == '{':
-        return response,True
+        return get_movies(response)
     else:
-        return response,False
+        return response
 
-
+def get_movies(movies):
+    response = "I recommend"
+    movies = json.loads(movies)
+    for x in movies["courses"]:
+        response = response + ", " + x["title"] + " (" + x["released"] + ")"
+    return response
 
 
 
