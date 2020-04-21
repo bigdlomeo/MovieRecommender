@@ -51,6 +51,10 @@ session_id = service.create_session(
 def index():
     return render_template('index.html')
 
+@app.route('/howto')
+def howTo():
+    return render_template('howto.html')
+
 
 @app.route('/movie')
 def movie():
