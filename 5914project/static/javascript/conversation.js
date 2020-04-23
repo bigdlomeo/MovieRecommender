@@ -2,7 +2,7 @@
 
 function begin(){
     $.ajax({
-        url: "/send_message/begin",
+        url: "/send_message/hello",
         }).done(function(e) {
             getReply(e);
         });
