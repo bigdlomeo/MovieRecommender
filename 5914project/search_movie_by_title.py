@@ -16,40 +16,39 @@ def requestIBMD(word):
     #print(data.decode("utf-8"))
     movies_return = json.loads(data.decode("utf-8"))
     print(json.dumps(movies_return, indent=4, sort_keys=True))
-    i = 0
     alldata = []
-    while i <5:
+    for movie in movies_return["results"]:
         data = []
-        print(i)
-        if "id" in movies_return["results"][i]:
-            data.append("https://www.imdb.com"+movies_return["results"][i]["id"])
+        if "id" in movie:
+            data.append("https://www.imdb.com"+movie["id"])
         else:
             data.append("")
-        if "image" in movies_return["results"][i]:
-            data.append(movies_return["results"][i]["image"]["url"])
+        if "image" in movie:
+            data.append(movie["image"]["url"])
         else:
             data.append("")
-        if "title" in movies_return["results"][i]:
-            data.append( movies_return["results"][i]["title"])
+        if "title" in movie:
+            data.append(movie["title"])
+        else:
+            data.pop() # rermove image
+            data.pop() #remove id
+            continue
+        if "year" in movie:
+            data.append(movie["year"])
+        else:
+            data.append("")
+        if "runningTimeInMinutes" in movie:
+            data.append(movie["runningTimeInMinutes"])
+        else:
+            data.append("")
+        if "titleType" in movie:
+            data.append(movie["titleType"])
         else:
             data.append("")
         data.append( "")
-        if "year" in movies_return["results"][i]:
-            data.append(movies_return["results"][i]["year"])
-        else:
-            data.append("")
-        if "runningTimeInMinutes" in movies_return["results"][i]:
-            data.append(movies_return["results"][i]["runningTimeInMinutes"])
-        else:
-            data.append("")
-        if "titleType" in movies_return["results"][i]:
-            data.append(movies_return["results"][i]["titleType"])
-        else:
-            data.append("")
-        data.append( "")
+        data.append("")
         data.append("")
         data.append("")
         data.append("")
         alldata.append(data)
-        i=i+1
     return alldata
