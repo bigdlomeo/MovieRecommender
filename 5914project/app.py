@@ -206,7 +206,7 @@ def presonality():
         actors = []
         creators = []
         directors = []
-        while j < 5:
+        while j < 6:
             if sig==1:
                 imdbs.append(movies[j][0])
                 images.append(movies[j][1])
